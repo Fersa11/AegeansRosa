@@ -1,18 +1,17 @@
 import Cards from "../components/Cards";
 import { Box } from "@mui/material";
-import { useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Sidebar from "../components/Sidebar";
 import dresses from "../assets/DressesDB";
-import { useCategoryStore } from "../store/catagory";
 
 function DressPage() {
-  // const [category, setCategory] = useState("JACKEN");
-  const { category, setCategory } = useCategoryStore();
+  const [category, setCategory] = useState("JACKEN");
   function defineCategory(dressType) {
     setCategory(dressType);
   }
 
   const filteredDresses = useMemo(() => {
+    console.log(category);
     return dresses.filter((dress) => dress.category === category);
   }, [category]);
 
