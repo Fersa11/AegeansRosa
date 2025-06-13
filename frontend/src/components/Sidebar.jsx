@@ -24,6 +24,8 @@ import Shirt from "./Icons/Shirt.jsx";
 import Me from "./Icons/me.jsx";
 import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
+import { useCategoryStore } from "../store/catagory";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 200;
 
@@ -86,6 +88,9 @@ export default function Sidebar(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const navigate = useNavigate(); // <-- add this
+  const setCategory = useCategoryStore((state) => state.setCategory); // <-- get setter
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -94,12 +99,9 @@ export default function Sidebar(props) {
     setOpen(false);
   };
 
-  function handlePassingValue(event) {
-    // setDressType(event.target.innerText);
-    // props.selectDressType(dressType);
-    // console.log(dressType);
-    props.defineCategory(event.target.innerText);
-    event.preventDefault();
+  function handlePassingValue(selectedCategory) {
+    // setCategory(selectedCategory);
+    navigate(`/Dresses/${selectedCategory}`);
   }
 
   return (
@@ -153,7 +155,7 @@ export default function Sidebar(props) {
           {/* {["Kimono", "Dress", "Shirt", "Hosen"].map((text, index) => ( */}
 
           <ListItem disablePadding>
-            <ListItemButton href="/Dresses" onClick={handlePassingValue}>
+            <ListItemButton onClick={() => handlePassingValue("JACKEN")}>
               <ListItemIcon>
                 {/* {index % 3 === 0 ? <Kimono /> : <EmojioneDress />} */}
                 <Kimono />
@@ -163,7 +165,7 @@ export default function Sidebar(props) {
           </ListItem>
 
           <ListItem disablePadding>
-            <ListItemButton href="/Dresses" onClick={handlePassingValue}>
+            <ListItemButton onClick={() => handlePassingValue("KLEIDER")}>
               <ListItemIcon>
                 <EmojioneDress />
               </ListItemIcon>
@@ -172,7 +174,11 @@ export default function Sidebar(props) {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton href="/Dresses" onClick={handlePassingValue}>
+            <ListItemButton
+              onClick={() => {
+                handlePassingValue("TOPS & BLUSEN");
+              }}
+            >
               <ListItemIcon>
                 <Shirt />
               </ListItemIcon>
@@ -181,7 +187,7 @@ export default function Sidebar(props) {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton href="/Dresses" onClick={handlePassingValue}>
+            <ListItemButton onClick={() => handlePassingValue("HOSEN")}>
               <ListItemIcon>
                 <HosenIcon />
               </ListItemIcon>
@@ -189,7 +195,7 @@ export default function Sidebar(props) {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton href="/Dresses" onClick={handlePassingValue}>
+            <ListItemButton onClick={() => handlePassingValue("ACCESSORIES")}>
               <ListItemIcon>
                 <BagIcon />
               </ListItemIcon>
