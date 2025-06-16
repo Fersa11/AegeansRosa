@@ -87,9 +87,18 @@ function Cards(dress) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <ExpandMoreIcon></ExpandMoreIcon>
         <CardContent>
-          <Typography sx={{ marginBottom: 2 }}>{dress.price}</Typography>
-          <Typography sx={{ marginBottom: 2 }}>{dress.material}</Typography>
-          <Typography sx={{ marginBottom: 2 }}>{dress.info}</Typography>
+          <Typography sx={{ marginBottom: 2 }}>
+            Preis: {dress.price} €
+          </Typography>
+          <Typography sx={{ marginBottom: 2 }}>
+            Material: {dress.material}
+          </Typography>
+          <Typography sx={{ marginBottom: 2 }}>
+            Pflegehinweise: {dress.info}
+          </Typography>
+          <Typography sx={{ marginBottom: 2 }}>
+            Produktgröße: {dress.produktgroesse}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>

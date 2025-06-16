@@ -27,6 +27,9 @@ import HosenIcon from "./Icons/Hosen.jsx";
 import { useCategoryStore } from "../store/catagory";
 import { useNavigate } from "react-router-dom";
 
+import { useAuthStore } from "../store/useAuthStore.js";
+import { Link } from "react-router-dom";
+
 const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -85,6 +88,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function Sidebar(props) {
+  const { user } = useAuthStore();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -225,6 +229,11 @@ export default function Sidebar(props) {
           </ListItem>
           {/* ))} */}
         </List>
+        {/* <ListItem>
+          <ListItemButton>
+            {user.isAdmin && <Link to="/admin/add-dress">Add Dress</Link>}
+          </ListItemButton>
+        </ListItem> */}
       </Drawer>
       <Main open={open}>
         <DrawerHeader />

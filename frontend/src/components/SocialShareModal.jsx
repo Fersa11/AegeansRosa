@@ -27,7 +27,7 @@ import EmailIcon from "@mui/icons-material/Email";
 // import TwitterIcon from "@mui/icons-material/Twitter";
 // import TelegramIcon from "@mui/icons-material/Telegram";
 // import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 // import RedditIcon from "@mui/icons-material/Reddit";
 import CheckIcon from "@mui/icons-material/Check";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -81,12 +81,12 @@ const SocialShareModal = ({ news }) => {
       component: WhatsappShareButton,
       icon: <InstagramIcon />,
       label: "Instagram"
-    },
-    {
-      component: WhatsappShareButton,
-      icon: <WhatsAppIcon />,
-      label: "Whatsapp"
     }
+    // {
+    //   component: WhatsappShareButton,
+    //   icon: <WhatsAppIcon />,
+    //   label: "Whatsapp"
+    // }
     // { component: RedditShareButton, icon: <RedditIcon />, label: "Reddit" }
   ];
 
