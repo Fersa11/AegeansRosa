@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useCategoryStore } from "../store/catagory";
 // ...other imports...
 import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 import { Box } from "@mui/material";
 import { useMemo } from "react";
 import Sidebar from "../components/Sidebar";
@@ -39,8 +40,8 @@ function DressPage() {
       >
         {filteredDresses.map((dress) => (
           <Cards
-            id={dress.id}
-            key={dress.id}
+            id={dress._id}
+            key={dress._id}
             produktname={dress.productName}
             img={dress.image}
             price={dress.price}
@@ -50,6 +51,7 @@ function DressPage() {
           />
         ))}
       </Box>
+      <Footer />
     </div>
   );
 }

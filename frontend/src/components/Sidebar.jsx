@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -24,11 +23,8 @@ import Shirt from "./Icons/Shirt.jsx";
 import Me from "./Icons/me.jsx";
 import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
-import { useCategoryStore } from "../store/catagory";
 import { useNavigate } from "react-router-dom";
-
-import { useAuthStore } from "../store/useAuthStore.js";
-import { Link } from "react-router-dom";
+import Logo_Aegean from "../assets/Logo_AegeansRoSa.png";
 
 const drawerWidth = 200;
 
@@ -87,13 +83,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end"
 }));
 
-export default function Sidebar(props) {
-  const { user } = useAuthStore();
+export default function Sidebar() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  const navigate = useNavigate(); // <-- add this
-  const setCategory = useCategoryStore((state) => state.setCategory); // <-- get setter
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -104,7 +97,6 @@ export default function Sidebar(props) {
   };
 
   function handlePassingValue(selectedCategory) {
-    // setCategory(selectedCategory);
     navigate(`/Dresses/${selectedCategory}`);
   }
 
@@ -128,7 +120,8 @@ export default function Sidebar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" bgcolor="grey">
-            Aegean's RoSa
+            {/* Aegean's RoSa */}
+            <img src={Logo_Aegean} width={250} padding={0} />
           </Typography>
         </Toolbar>
       </AppBar>
@@ -186,7 +179,6 @@ export default function Sidebar(props) {
               <ListItemIcon>
                 <Shirt />
               </ListItemIcon>
-
               <ListItemText primary={"TOPS & BLUSEN"} />
             </ListItemButton>
           </ListItem>
@@ -208,8 +200,8 @@ export default function Sidebar(props) {
           </ListItem>
           {/* ))} */}
         </List>
-        <Divider />
-        <List>
+        {/* <Divider /> */}
+        {/* <List>
           <ListItem key={"Mail"} disablePadding>
             <ListItemButton href="/Mail">
               <ListItemIcon>
@@ -222,13 +214,11 @@ export default function Sidebar(props) {
             <ListItemButton href="/me">
               <ListItemIcon>
                 <Me />
-                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
               <ListItemText primary={"Ich"} />
             </ListItemButton>
           </ListItem>
-          {/* ))} */}
-        </List>
+        </List> */}
         {/* <ListItem>
           <ListItemButton>
             {user.isAdmin && <Link to="/admin/add-dress">Add Dress</Link>}

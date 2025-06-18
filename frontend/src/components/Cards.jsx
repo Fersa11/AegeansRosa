@@ -6,11 +6,12 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
+import InfoIcon from "@mui/icons-material/Info";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Button, Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const ExpandMore = styled((props) => {
@@ -44,7 +45,7 @@ function Cards(dress) {
     setExpanded(!expanded);
   };
   return (
-    <Card sx={{ maxWidth: 310, m: 1 }} className="card">
+    <Card sx={{ maxWidth: 310, mx: 2, my: 3 }} className="card">
       <CardHeader title={dress.produktname} subheader={dress.subheader} />
       <CardMedia
         component="img"
@@ -53,25 +54,43 @@ function Cards(dress) {
         height="194"
       />
       <CardContent>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        <Typography variant="body2" sx={{ color: "grey" }}>
           {dress.produktbeschreibung}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
+        </IconButton> */}
         {/* <IconButton aria-label="share"> */}
         {/* <ShareIcon /> */}
         {/* <SocialShareModal /> */}
         {/* </IconButton> */}
-        <IconButton aria-label="whatsApp">
+        {/* <IconButton aria-label="whatsApp">
           <WhatsAppIcon />
-        </IconButton>
+        </IconButton> */}
         <IconButton aria-label="insta">
-          <InstagramIcon />
+          <InstagramIcon
+            sx={{
+              color: "grey",
+              "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                color: "#ca2e56"
+              }
+            }}
+          />
         </IconButton>
-        <Button aria-label="Order" href="mailto:x@ghmail">
+        <Button
+          aria-label="Order"
+          href="mailto:x@ghmail"
+          sx={{
+            color: "grey",
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              color: "#ca2e56"
+            }
+          }}
+        >
           Order
         </Button>
         <ExpandMore
@@ -80,7 +99,15 @@ function Cards(dress) {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
+          <InfoIcon
+            sx={{
+              color: "grey",
+              "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                color: "#ca2e56"
+              }
+            }}
+          />
         </ExpandMore>
       </CardActions>
 
