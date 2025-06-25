@@ -51,7 +51,6 @@ function DressPage() {
           />
         ))}
       </Box>
-      <Footer />
     </div>
   );
 }

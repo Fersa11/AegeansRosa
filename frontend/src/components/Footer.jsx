@@ -16,8 +16,8 @@ import EmailIcon from "@mui/icons-material/Email";
 // import { BsArrowUpCircle } from "react-icons/bs";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 const StyledFooter = styled(Box)(({ theme }) => ({
-  backgroundColor: "grey",
-  color: "#ffffff",
+  backgroundColor: "#DBD7D2",
+  color: "black",
   padding: "32px 0 32px 0",
   position: "relative"
 }));
@@ -31,7 +31,7 @@ const StyledLink = styled(Typography)(({ theme }) => ({
 }));
 
 const SocialIcon = styled(IconButton)(({ theme }) => ({
-  color: "#ffffff",
+  color: "black",
   "&:hover": {
     color: "#ca2e56",
     transform: "scale(1.1)",
@@ -43,7 +43,7 @@ const BackToTop = styled(Button)(({ theme }) => ({
   position: "absolute",
   right: "24px",
   top: "24px",
-  color: "#ffffff",
+  color: "black",
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.1)",
     color: "#ca2e56"
@@ -104,14 +104,14 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Connect With Us
             </Typography>
-            <Box sx={{ mb: 2 }}>
-              <SocialIcon aria-label="Instagram" size="small">
-                <InstagramIcon />
-              </SocialIcon>
-              <SocialIcon aria-label="EMail" size="small">
-                <EmailIcon />
-              </SocialIcon>
-            </Box>
+            {/* <Box sx={{ mb: 2 }}> */}
+            <SocialIcon aria-label="Instagram" size="small">
+              <InstagramIcon />
+            </SocialIcon>
+            <SocialIcon aria-label="EMail" size="small">
+              <EmailIcon />
+            </SocialIcon>
+            {/* </Box> */}
             {/* <form onSubmit={handleNewsletterSubmit}>
               <TextField
                 fullWidth

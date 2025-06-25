@@ -24,7 +24,7 @@ import Me from "./Icons/me.jsx";
 import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
 import { useNavigate } from "react-router-dom";
-import Logo_Aegean from "../assets/Logo_AegeansRoSa.png";
+import Logo_Aegean from "../assets/Logo_AegeansRoSa_rev2.png";
 
 const drawerWidth = 200;
 
@@ -104,9 +104,9 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar bgcolor="grey" sx={{ bgcolor: "grey", color: "white" }}>
+        <Toolbar sx={{ bgcolor: "#DBD7D2", color: "white" }}>
           <IconButton
-            color="inherit"
+            color="black"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -119,9 +119,17 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" bgcolor="grey">
+          <Typography variant="h6" noWrap component="div" bgcolor="#DBD7D2">
             {/* Aegean's RoSa */}
-            <img src={Logo_Aegean} width={250} padding={0} />
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <img src={Logo_Aegean} width={100} height={50} />
+            </Box>
           </Typography>
         </Toolbar>
       </AppBar>
