@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     fetchDresses();
   }, [fetchDresses]);
-  console.log("dresses:", dresses);
+  // console.log("dresses:", dresses);
 
   return (
     <div className="productpage">

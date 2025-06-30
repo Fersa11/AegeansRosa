@@ -20,11 +20,11 @@ import MailIcon from "@mui/icons-material/Mail";
 import Kimono from "./Icons/Kimono.jsx";
 import EmojioneDress from "./Icons/Dress.jsx";
 import Shirt from "./Icons/Shirt.jsx";
-import Me from "./Icons/me.jsx";
 import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
 import { useNavigate } from "react-router-dom";
 import Logo_Aegean from "../assets/Logo_AegeansRoSa_rev2.png";
+import Datenschutz from "../pages/Datenschutz.jsx";
 
 const drawerWidth = 200;
 
@@ -235,10 +235,10 @@ export default function Sidebar() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography sx={{ marginBottom: 4 }}>
+        {/* <Typography sx={{ marginBottom: 4 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-        </Typography>
+        </Typography> */}
       </Main>
     </Box>
   );

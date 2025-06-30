@@ -10,7 +10,7 @@ import {
   Divider
 } from "@mui/material";
 import { color, styled } from "@mui/system";
-
+import { Link } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 // import { BsArrowUpCircle } from "react-icons/bs";
@@ -24,8 +24,11 @@ const StyledFooter = styled(Box)(({ theme }) => ({
 
 const StyledLink = styled(Typography)(({ theme }) => ({
   cursor: "pointer",
+  textDecoration: "none",
+  color: "inherit",
   "&:hover": {
     color: "#ca2e56",
+    textDecoration: "none",
     transition: "color 0.3s ease"
   }
 }));
@@ -68,21 +71,26 @@ const Footer = () => {
   return (
     <StyledFooter component="footer" role="contentinfo">
       <Container maxWidth="lg">
-        <Grid container spacing={12}>
+        <Grid container spacing={6}>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
               Kunden Support
             </Typography>
-            {/* <StyledLink variant="body2" gutterBottom>
-              Help & Contact
-            </StyledLink> */}
-            <StyledLink variant="body2" gutterBottom>
+            <StyledLink
+              variant="body2"
+              component={Link}
+              to="/VerstandInformationen"
+              gutterBottom
+            >
               Versand Informationen
             </StyledLink>
-            {/* <StyledLink variant="body2" gutterBottom>
-              Rückgabepolitik
-            </StyledLink> */}
-            <StyledLink variant="body2" gutterBottom>
+            <br />
+            <StyledLink
+              variant="body2"
+              component={Link}
+              to="/SizeGuide"
+              gutterBottom
+            >
               Size Guide
             </StyledLink>
           </Grid>
@@ -90,15 +98,32 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
-            <StyledLink variant="body2" gutterBottom>
-              Über uns
+            <StyledLink
+              variant="body2"
+              component={Link}
+              to="/UeberMich"
+              gutterBottom
+            >
+              Über mich
             </StyledLink>
-            <StyledLink variant="body2" gutterBottom>
+            <br />
+            <StyledLink
+              variant="body2"
+              component={Link}
+              to="/Datenschutz"
+              gutterBottom
+            >
               Datenschutzbestimmungen
             </StyledLink>
-            {/* <StyledLink variant="body2" gutterBottom>
-              Nutzungsbestimmungen
-            </StyledLink> */}
+            <br />
+            <StyledLink
+              variant="body2"
+              component={Link}
+              to="/Impressum"
+              gutterBottom
+            >
+              Impressum
+            </StyledLink>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
@@ -112,50 +137,15 @@ const Footer = () => {
               <EmailIcon />
             </SocialIcon>
             {/* </Box> */}
-            {/* <form onSubmit={handleNewsletterSubmit}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                size="small"
-                label="Newsletter Signup"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  input: { color: "white" },
-                  label: { color: "white" }
-                }}
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                sx={{ mt: 1, backgroundColor: "#ca2e56" }}
-                fullWidth
-              >
-                Subscribe
-              </Button>
-            </form> */}
           </Grid>
-
-          {/* <Grid item xs={12} sm={6} md={3}> */}
-          {/* <Typography variant="h6" gutterBottom>
-              Payment & Security
-            </Typography>
-            <Box sx={{ mb: 2 }}>
-              <FaCreditCard size={24} style={{ marginRight: 12 }} />
-              <FaPaypal size={24} style={{ marginRight: 12 }} />
-              <FaLock size={24} />
-            </Box>
-            <Typography variant="body2">
-              Your payment information is processed securely. We do not store
-              credit card details nor have access to your credit card
-              information.
-            </Typography> */}
-          {/* </Grid> */}
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <BackToTop onClick={scrollToTop} startIcon={<ArrowCircleUpIcon />}>
-            Zurück zum Anfang
+          <BackToTop
+            onClick={scrollToTop}
+            startIcon={<ArrowCircleUpIcon />}
+            sx={{ mt: 0.5 }}
+          >
+            Zum Anfang
           </BackToTop>
         </Grid>
         <Divider sx={{ my: 1, backgroundColor: "#ca2e56" }} />
@@ -163,7 +153,7 @@ const Footer = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Typography variant="body2" color="text.primary">
-              © {new Date().getFullYear()} Aegean's RoSa. All rights reserved.
+              © 2025 - {new Date().getFullYear()}, Fersa. All rights reserved.
             </Typography>
           </Grid>
         </Grid>
