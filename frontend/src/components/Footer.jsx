@@ -1,10 +1,8 @@
-import React, { useState } from "react";
 import {
   Box,
   Container,
   Grid,
   Typography,
-  TextField,
   Button,
   IconButton,
   Divider
@@ -13,12 +11,11 @@ import { color, styled } from "@mui/system";
 import { Link } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
-// import { BsArrowUpCircle } from "react-icons/bs";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 const StyledFooter = styled(Box)(({ theme }) => ({
   backgroundColor: "#DBD7D2",
   color: "black",
-  padding: "32px 0 32px 0",
+  padding: "16px 0 8px 0",
   position: "relative"
 }));
 
@@ -45,7 +42,7 @@ const SocialIcon = styled(IconButton)(({ theme }) => ({
 const BackToTop = styled(Button)(({ theme }) => ({
   position: "absolute",
   right: "24px",
-  top: "24px",
+  top: "8px",
   color: "black",
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -54,16 +51,6 @@ const BackToTop = styled(Button)(({ theme }) => ({
 }));
 
 const Footer = () => {
-  // const [email, setEmail] = useState("");
-
-  // const handleNewsletterSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (email && email.includes("@")) {
-  //     console.log("Newsletter Anmeldung:", email);
-  //     setEmail("");
-  //   }
-  // };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -72,7 +59,7 @@ const Footer = () => {
     <StyledFooter component="footer" role="contentinfo">
       <Container maxWidth="lg">
         <Grid container spacing={6}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>
               Kunden Support
             </Typography>
@@ -94,7 +81,7 @@ const Footer = () => {
               Size Guide
             </StyledLink>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
@@ -125,7 +112,7 @@ const Footer = () => {
               Impressum
             </StyledLink>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>
               Connect With Us
             </Typography>
@@ -139,7 +126,7 @@ const Footer = () => {
             {/* </Box> */}
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <BackToTop
             onClick={scrollToTop}
             startIcon={<ArrowCircleUpIcon />}
@@ -151,7 +138,7 @@ const Footer = () => {
         <Divider sx={{ my: 1, backgroundColor: "#ca2e56" }} />
 
         <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item>
+          <Grid>
             <Typography variant="body2" color="text.primary">
               © 2025 - {new Date().getFullYear()}, Fersa. All rights reserved.
             </Typography>

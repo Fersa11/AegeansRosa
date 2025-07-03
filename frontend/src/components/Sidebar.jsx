@@ -233,12 +233,13 @@ export default function Sidebar() {
           </ListItemButton>
         </ListItem> */}
       </Drawer>
-      <Main open={open}>
+      <Main open={open} onClick={handleDrawerClose}>
         <DrawerHeader />
         {/* <Typography sx={{ marginBottom: 4 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
         </Typography> */}
+        {/* <Datenschutz /> */}
       </Main>
     </Box>
   );
