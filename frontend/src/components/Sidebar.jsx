@@ -22,7 +22,7 @@ import Shirt from "./Icons/Shirt.jsx";
 import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
 import { useNavigate } from "react-router-dom";
-import Logo_Aegean from "../assets/Logo_AegeansRoSa_rev2.png";
+import Logo_Aegean from "../assets/Logo_AegeansRoSa_rev2.PNG";
 
 const drawerWidth = 200;
 
