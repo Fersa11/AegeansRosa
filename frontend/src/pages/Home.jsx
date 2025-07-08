@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 // import dresses from "../assets/DressesDB";
 import { useEffect } from "react";
 import { useDressStore } from "../store/dresses";
-
+//
 function Home() {
   const { fetchDresses, dresses } = useDressStore();
 
