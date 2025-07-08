@@ -23,7 +23,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
-app.use("/api/dresses", dressRoutes);
+app.use("/api/dresses", (req, res, next) => {
+  console.log("GET /api/dresses aufgerufen");
+  next();
+});
 
 connectDB().then(() => {
   app.listen(PORT, () => {
