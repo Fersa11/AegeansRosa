@@ -1,7 +1,7 @@
 import Cards from "../components/Cards";
 import { Box } from "@mui/material";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+
 // import dresses from "../assets/DressesDB";
 import { useEffect } from "react";
 import { useDressStore } from "../store/dresses";
