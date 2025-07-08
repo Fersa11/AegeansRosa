@@ -9,7 +9,11 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ["https://www.aegeansrosa.de", "https://aegeansrosa.de"],
+    origin: [
+      "http://localhost:5173", // für lokale Entwicklung
+      "https://www.aegeansrosa.de",
+      "https://aegeansrosa.de"
+    ],
     credentials: true
   })
 );
