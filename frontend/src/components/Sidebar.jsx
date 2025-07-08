@@ -16,7 +16,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import Kimono from "./Icons/Kimono.jsx";
 import EmojioneDress from "./Icons/Dress.jsx";
 import Shirt from "./Icons/Shirt.jsx";
@@ -24,7 +23,6 @@ import BagIcon from "./Icons/Bag.jsx";
 import HosenIcon from "./Icons/Hosen.jsx";
 import { useNavigate } from "react-router-dom";
 import Logo_Aegean from "../assets/Logo_AegeansRoSa_rev2.png";
-import Datenschutz from "../pages/Datenschutz.jsx";
 
 const drawerWidth = 200;
 

@@ -59,16 +59,6 @@ function Cards(dress) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
-        {/* <IconButton aria-label="share"> */}
-        {/* <ShareIcon /> */}
-        {/* <SocialShareModal /> */}
-        {/* </IconButton> */}
-        {/* <IconButton aria-label="whatsApp">
-          <WhatsAppIcon />
-        </IconButton> */}
         <IconButton aria-label="insta">
           <InstagramIcon
             sx={{
@@ -82,7 +72,7 @@ function Cards(dress) {
         </IconButton>
         <Button
           aria-label="Order"
-          href="mailto:x@ghmail"
+          href="mailto:aegeansrosa@gmail.com"
           sx={{
             color: "grey",
             "&:hover": {

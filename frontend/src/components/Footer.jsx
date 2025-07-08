@@ -2,11 +2,11 @@ import {
   Box,
   Container,
   Grid,
-  Typography,
   Button,
   IconButton,
   Divider
 } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import { color, styled } from "@mui/system";
 import { Link } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -66,10 +66,10 @@ const Footer = () => {
             <StyledLink
               variant="body2"
               component={Link}
-              to="/VerstandInformationen"
+              to="/Versandinformationen"
               gutterBottom
             >
-              Versand Informationen
+              Versandinformationen
             </StyledLink>
             <br />
             <StyledLink
@@ -114,7 +114,7 @@ const Footer = () => {
           </Grid>
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>
-              Connect With Us
+              Kontakt
             </Typography>
             {/* <Box sx={{ mb: 2 }}> */}
             <SocialIcon aria-label="Instagram" size="small">

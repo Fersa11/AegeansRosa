@@ -8,7 +8,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import Impressum from "./pages/Impressum.jsx";
 import { Box } from "@mui/material";
 import { useCategoryStore } from "./store/catagory.js";
-import VersandInformationen from "./pages/VersandInformationen.jsx";
+import Versandinformationen from "./pages/Versandinformationen.jsx";
 import SizeGuide from "./pages/SizeGuide.jsx";
 // import { useAuthStore } from "../backup/useAuthStore.js";
 import UeberMich from "./pages/UeberMich.jsx";
@@ -30,12 +30,11 @@ function App() {
           <Route path="/UeberMich" element={<UeberMich />} />
           <Route path="/Datenschutz" element={<Datenschutz />} />
           <Route path="/Impressum" element={<Impressum />} />
-
-          <Route
-            path="/VersandInformationen"
-            element={<VersandInformationen />}
-          />
           <Route path="/SizeGuide" element={<SizeGuide />} />
+          <Route
+            path="/Versandinformationen"
+            element={<Versandinformationen />}
+          />
         </Routes>
       </Box>
       <Footer />
