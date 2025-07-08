@@ -21,8 +21,8 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use("/api/dresses", dressRoutes);
 
-app.listen(PORT, () => {
-  connectDB();
-
-  console.log(`Server is running on http://localhost:${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server läuft auf Port ${PORT}`);
+  });
 });
