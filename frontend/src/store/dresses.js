@@ -1,4 +1,7 @@
 import { create } from "zustand";
+const apiUrl = import.meta.env.VITE_API_URL;
+
+console.log("API URL:", apiUrl);
 
 export const useDressStore = create((set) => ({
   dresses: [],
@@ -6,9 +9,7 @@ export const useDressStore = create((set) => ({
   // Function to fetch dresses from the API
   fetchDresses: async () => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/dresses`
-      );
+      const response = await fetch(`${apiUrl}/api/dresses`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
