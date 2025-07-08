@@ -66,10 +66,10 @@ const Footer = () => {
             <StyledLink
               variant="body2"
               component={Link}
-              to="/Versandinformationen"
+              to="/Versand"
               gutterBottom
             >
-              Versandinformationen
+              Versand
             </StyledLink>
             <br />
             <StyledLink

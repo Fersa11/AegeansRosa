@@ -1,6 +1,6 @@
 import { Box, Typography, List, ListItem } from "@mui/material";
 
-export default function Versandinformationen() {
+export default function Versand() {
   return (
     <Box sx={{ padding: 2 }}>
       <Typography variant="h4" component="h1" gutterBottom>
