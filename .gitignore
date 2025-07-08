@@ -41,3 +41,6 @@ logs/
 *.pdf
 *.docx
 *.csv
+.docx
+.pdf
+.csv
