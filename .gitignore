@@ -36,3 +36,8 @@ logs/
 *.swp
 *.bak
 *.orig
+
+# Docs
+*.pdf
+*.docx
+.csv
