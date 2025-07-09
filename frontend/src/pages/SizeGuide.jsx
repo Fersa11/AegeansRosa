@@ -88,9 +88,8 @@ export default function SizeGuide() {
         </Grid>
       </Paper>
       {/* </Box> */}
-
       <Typography variant="h6" component="h3" gutterBottom>
-        Damen – Oberteile & Kleider
+        Damen - Oberteile & Kleider
       </Typography>
       <Table>
         <TableHead>
@@ -104,41 +103,39 @@ export default function SizeGuide() {
         <TableBody>
           <TableRow>
             <TableCell>34</TableCell>
-            <TableCell>80–84</TableCell>
-            <TableCell>62–66</TableCell>
-            <TableCell>86–90</TableCell>
-          </TableRow>{" "}
+            <TableCell>80-84</TableCell>
+            <TableCell>62-66</TableCell>
+            <TableCell>86-90</TableCell>
+          </TableRow>
           <TableRow>
             <TableCell>36</TableCell>
-            <TableCell>84–88</TableCell>
-            <TableCell>66–70</TableCell>
-            <TableCell>90–94</TableCell>
+            <TableCell>84-88</TableCell>
+            <TableCell>66-70</TableCell>
+            <TableCell>90-94</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>38</TableCell>
-            <TableCell>88–92</TableCell>
-            <TableCell>70–74</TableCell>
-            <TableCell>94–98</TableCell>
+            <TableCell>88-92</TableCell>
+            <TableCell>70-74</TableCell>
+            <TableCell>94-98</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>40</TableCell>
-            <TableCell>92–96</TableCell>
-            <TableCell>74–78</TableCell>
-
-            <TableCell>98–102</TableCell>
+            <TableCell>92-96</TableCell>
+            <TableCell>74-78</TableCell>
+            <TableCell>98-102</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>42</TableCell>
-            <TableCell>96–100</TableCell>
-
-            <TableCell>78–82</TableCell>
-            <TableCell>102–106</TableCell>
+            <TableCell>96-100</TableCell>
+            <TableCell>78-82</TableCell>
+            <TableCell>102-106</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>44</TableCell>
-            <TableCell>100–104</TableCell>
-            <TableCell>82–86</TableCell>
-            <TableCell>106–110</TableCell>
+            <TableCell>100-104</TableCell>
+            <TableCell>82-86</TableCell>
+            <TableCell>106-110</TableCell>
           </TableRow>
           {/* <!-- Weitere Zeilen --> */}
         </TableBody>

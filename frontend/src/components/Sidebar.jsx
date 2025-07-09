@@ -120,13 +120,20 @@ export default function Sidebar() {
           <Typography variant="h6" noWrap component="div" bgcolor="#DBD7D2">
             {/* Aegean's RoSa */}
             <Box
+              component="img"
               sx={{
                 flexGrow: 1,
                 display: "flex",
                 justifyContent: "center"
               }}
+              alt="Aegean's RoSa Logo"
+              src={Logo_Aegean}
+              width={100}
+              height={50}
+              href="/"
+              onClick={() => navigate("/")}
             >
-              <img src={Logo_Aegean} width={100} height={50} />
+              {/* <img src={Logo_Aegean} width={100} height={50} /> */}
             </Box>
           </Typography>
         </Toolbar>

@@ -116,14 +116,26 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Kontakt
             </Typography>
-            {/* <Box sx={{ mb: 2 }}> */}
-            <SocialIcon aria-label="Instagram" size="small">
-              <InstagramIcon />
-            </SocialIcon>
-            <SocialIcon aria-label="EMail" size="small">
-              <EmailIcon />
-            </SocialIcon>
-            {/* </Box> */}
+            <Box sx={{ mb: 2 }}>
+              <SocialIcon
+                aria-label="Instagram"
+                size="small"
+                component="a"
+                href="https://www.instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon />
+              </SocialIcon>
+              <SocialIcon
+                aria-label="EMail"
+                size="small"
+                component="a"
+                href="mailto:kontakt@aegeansrosa.de?subject=Anfrage%20AegeansRosa"
+              >
+                <EmailIcon />
+              </SocialIcon>
+            </Box>
           </Grid>
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 3 }}>

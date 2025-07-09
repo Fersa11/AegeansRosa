@@ -72,7 +72,9 @@ function Cards(dress) {
         </IconButton>
         <Button
           aria-label="Order"
-          href="mailto:aegeansrosa@gmail.com"
+          href={`mailto:kontakt@aegeansrosa.de?subject=Anfrage%20AegeansRosa%20${encodeURIComponent(
+            dress.produktname || ""
+          )}`}
           sx={{
             color: "grey",
             "&:hover": {
