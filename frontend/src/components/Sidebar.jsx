@@ -102,7 +102,7 @@ export default function Sidebar() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar sx={{ bgcolor: "#DBD7D2", color: "white" }}>
+        <Toolbar sx={{ bgcolor: "#F6F5F2", color: "white" }}>
           <IconButton
             color="black"
             aria-label="open drawer"
@@ -117,7 +117,7 @@ export default function Sidebar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" bgcolor="#DBD7D2">
+          <Typography variant="h6" noWrap component="div" bgcolor="#F6F5F2">
             {/* Aegean's RoSa */}
             <Box
               component="img"

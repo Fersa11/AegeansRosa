@@ -13,7 +13,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 const StyledFooter = styled(Box)(({ theme }) => ({
-  backgroundColor: "#DBD7D2",
+  backgroundColor: "#F6F5F2",
   color: "black",
   padding: "16px 0 8px 0",
   position: "relative"
