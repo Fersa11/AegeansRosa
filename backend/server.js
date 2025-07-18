@@ -10,13 +10,14 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // für lokale Entwicklung
+      "http://localhost:5173", // für lokale Entwicklung (Vite)
       "https://www.aegeansrosa.de",
       "https://aegeansrosa.de"
     ],
     credentials: true
   })
 );
+
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;

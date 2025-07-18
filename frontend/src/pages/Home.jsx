@@ -28,11 +28,13 @@ function Home() {
             id={dress._id}
             key={dress._id}
             produktname={dress.productName}
-            img={dress.image}
+            produktbeschreibung={dress.productDescription}
+            image={dress.image} // Display the first image
             price={dress.price}
             produktgroesse={dress.size}
             info={dress.careInstructions}
             material={dress.material}
+            // category={dress.category} // Assuming category is available in the dress object
           />
         ))}
       </Box>

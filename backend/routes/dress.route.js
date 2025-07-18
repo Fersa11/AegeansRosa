@@ -1,6 +1,7 @@
 import express from "express";
 
 import {
+  testDB,
   createDress,
   deleteDress,
   getAllDresses,
@@ -15,5 +16,9 @@ router.post("/", createDress);
 router.put("/:id", updateDress);
 
 router.delete("/:id", deleteDress);
+
+// router.get("/admin/migrate-images", adminAccess);
+
+router.get("/test-db", testDB);
 
 export default router;

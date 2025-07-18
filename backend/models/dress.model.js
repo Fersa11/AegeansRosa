@@ -9,6 +9,7 @@ const DressSchema = new mongoose.Schema(
     // },
     category: {
       type: String,
+      enum: ["JACKEN", "KLEIDER", "TOPS & BLUSEN", "HOSEN", "ACCESSORIES"],
       required: true
     },
     model: {
@@ -28,8 +29,9 @@ const DressSchema = new mongoose.Schema(
       required: false
     },
     image: {
-      type: String,
-      required: true
+      type: [String], // Array of image URLs
+      default: []
+      // required: true
     },
     size: {
       type: String,

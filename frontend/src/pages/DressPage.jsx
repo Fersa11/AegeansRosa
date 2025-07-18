@@ -43,11 +43,13 @@ function DressPage() {
             id={dress._id}
             key={dress._id}
             produktname={dress.productName}
+            produktbeschreibung={dress.productDescription}
             img={dress.image}
             price={dress.price}
             produktgroesse={dress.size}
             info={dress.careInstructions}
             material={dress.material}
+            // category={dress.category} // Assuming category is available in the dress object
           />
         ))}
       </Box>

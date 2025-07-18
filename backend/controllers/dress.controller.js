@@ -86,6 +86,58 @@ export const deleteDress = async (req, res) => {
   }
 };
 
+// Admin access function to migrate image field to images array
+// export const adminAccess = async (req, res) => {
+//   try {
+//     const findDresses = await Dress.find({
+//       image: { $exists: true },
+//       images: { $exists: false }
+//     });
+
+//     for (const dress of findDresses) {
+//       // Bild migrieren
+//       dress.images = Array.isArray(dress.image)
+//         ? dress.image.flat()
+//         : [dress.image];
+
+//       dress.image = undefined; // optional: löscht das alte Feld
+
+//       // Boolean-Feld korrigieren
+//       if (typeof dress.deliverable === "string") {
+//         const val = dress.deliverable.trim().toLowerCase();
+//         dress.deliverable =
+//           val === "wahr" || val === "true" || val === "ja" || val === "1";
+//       } else if (typeof dress.deliverable !== "boolean") {
+//         // fallback: set to false if not boolean or string
+//         dress.deliverable = false;
+//       }
+
+//       await dress.save();
+//     }
+
+//     res.send(
+//       `Migration abgeschlossen. ${findDresses.length} Produkte aktualisiert.`
+//     );
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Fehler bei der Migration");
+//   }
+// };
+
+export const testDB = async (req, res) => {
+  try {
+    const collections = await mongoose.connection.db
+      .listCollections()
+      .toArray();
+    res.json({
+      connectedTo: mongoose.connection.name,
+      collections: collections.map((c) => c.name)
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 //Aktuell nicht in Verwendung
 // export const getDressById = async (req, res) => {
 //   const { id } = req.params;
