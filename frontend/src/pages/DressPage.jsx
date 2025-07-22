@@ -44,7 +44,7 @@ function DressPage() {
             key={dress._id}
             produktname={dress.productName}
             produktbeschreibung={dress.productDescription}
-            img={dress.image}
+            image={dress.image}
             price={dress.price}
             produktgroesse={dress.size}
             info={dress.careInstructions}
