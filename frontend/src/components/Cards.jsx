@@ -8,7 +8,7 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import Typography from "@mui/material/Typography";
-import { Button, Collapse } from "@mui/material";
+import { Button, Collapse, Modal, Box } from "@mui/material";
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Slider from "react-slick";
@@ -38,6 +38,9 @@ function Cards({
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => setExpanded(!expanded);
 
+  const [open, setOpen] = React.useState(false);
+  const [selectedImg, setSelectedImg] = React.useState("");
+
   const settings = {
     dots: true,
     infinite: true,
@@ -45,6 +48,16 @@ function Cards({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false
+  };
+
+  const handleOpen = (imgUrl) => {
+    setSelectedImg(imgUrl);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedImg("");
   };
 
   return (
@@ -57,10 +70,37 @@ function Cards({
             component="img"
             image={imgUrl}
             alt={`${produktname} ${index + 1}`}
-            height="194"
+            height="480"
+            // maxHeight="20vh"
+            onClick={() => handleOpen(imgUrl)}
+            style={{ cursor: "pointer" }}
           />
         ))}
       </Slider>
+      <Modal open={open} onClose={handleClose}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            overflow: "auto", // Enables both vertical and horizontal scroll if needed
+            backgroundColor: "white",
+            padding: 2,
+            borderRadius: 2,
+            boxShadow: 24
+          }}
+        >
+          <img
+            src={selectedImg}
+            alt="Zoomed"
+            style={{ width: "100%", height: "100%", borderRadius: "8px" }}
+          />
+        </Box>
+      </Modal>
+
       <CardContent>
         <Typography variant="body2" sx={{ color: "grey", mt: 2 }}>
           {produktbeschreibung}
