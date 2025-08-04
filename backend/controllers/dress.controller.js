@@ -1,5 +1,4 @@
 import Dress from "../models/dress.model.js";
-import mongoose from "mongoose";
 
 export const getAllDresses = async (req, res) => {
   try {
@@ -16,75 +15,81 @@ export const getAllDresses = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+//Create, Update, and Delete functions for dresses
 
-export const createDress = async (req, res) => {
-  const dress = req.body;
-  // Here you would typically save the dress to the database
-  if (!dress.category) {
-    return res.status(400).json({ message: "All fields are required" });
-  }
-  const newDress = new Dress(dress);
-  try {
-    await newDress.save();
-    res.status(201).json({
-      success: true,
-      message: "Dress saved successfully",
-      dress: newDress
-    });
-  } catch (error) {
-    console.error("Error saving dress:", error.message);
-    res.status(500).json({ message: "Server error" });
-  }
-};
+// Function to create a new dress
 
-export const updateDress = async (req, res) => {
-  // Extract the ID from the request parameters
-  const { id } = req.params;
-  const DressData = req.body;
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ message: "Invalid dress ID" });
-  }
-  try {
-    // Find the dress by ID and update it
-    const updatedDress = await Dress.findByIdAndUpdate(id, DressData, {
-      new: true, // Return the updated document
-      runValidators: true // Validate the update against the schema
-    });
+// export const createDress = async (req, res) => {
+//   const dress = req.body;
+//   // Here you would typically save the dress to the database
+//   if (!dress.category) {
+//     return res.status(400).json({ message: "All fields are required" });
+//   }
+//   const newDress = new Dress(dress);
+//   try {
+//     await newDress.save();
+//     res.status(201).json({
+//       success: true,
+//       message: "Dress saved successfully",
+//       dress: newDress
+//     });
+//   } catch (error) {
+//     console.error("Error saving dress:", error.message);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// };
+// Function to update an existing dress updates by ID
 
-    if (!updatedDress) {
-      return res.status(404).json({ message: "Dress not found" });
-    }
+// export const updateDress = async (req, res) => {
+//   // Extract the ID from the request parameters
+//   const { id } = req.params;
+//   const DressData = req.body;
+//   if (!mongoose.Types.ObjectId.isValid(id)) {
+//     return res.status(400).json({ message: "Invalid dress ID" });
+//   }
+//   try {
+//     // Find the dress by ID and update it
+//     const updatedDress = await Dress.findByIdAndUpdate(id, DressData, {
+//       new: true, // Return the updated document
+//       runValidators: true // Validate the update against the schema
+//     });
 
-    res.status(200).json({
-      success: true,
-      message: "Dress updated successfully",
-      dress: updatedDress
-    });
-  } catch (error) {
-    console.error("Error updating dress:", error.message);
-    res.status(500).json({ message: "Server error" });
-  }
-};
+//     if (!updatedDress) {
+//       return res.status(404).json({ message: "Dress not found" });
+//     }
 
-export const deleteDress = async (req, res) => {
-  // console.log(req);
-  // Extract the ID from the request parameters
-  const { id } = req.params;
-  try {
-    const deletedDress = await Dress.findByIdAndDelete(id);
-    if (!deletedDress) {
-      return res.status(404).json({ message: "Dress not found" });
-    }
-    res.status(200).json({
-      success: true,
-      message: "Dress deleted successfully",
-      dress: deletedDress
-    });
-  } catch (error) {
-    console.error("Error deleting dress:", error.message);
-    res.status(500).json({ message: "Server error" });
-  }
-};
+//     res.status(200).json({
+//       success: true,
+//       message: "Dress updated successfully",
+//       dress: updatedDress
+//     });
+//   } catch (error) {
+//     console.error("Error updating dress:", error.message);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// };
+
+// Function to delete a dress by ID
+
+// export const deleteDress = async (req, res) => {
+//   // console.log(req);
+//   // Extract the ID from the request parameters
+//   const { id } = req.params;
+//   try {
+//     const deletedDress = await Dress.findByIdAndDelete(id);
+//     if (!deletedDress) {
+//       return res.status(404).json({ message: "Dress not found" });
+//     }
+//     res.status(200).json({
+//       success: true,
+//       message: "Dress deleted successfully",
+//       dress: deletedDress
+//     });
+//   } catch (error) {
+//     console.error("Error deleting dress:", error.message);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// };
 
 // Admin access function to migrate image field to images array
 // export const adminAccess = async (req, res) => {
@@ -124,21 +129,8 @@ export const deleteDress = async (req, res) => {
 //   }
 // };
 
-export const testDB = async (req, res) => {
-  try {
-    const collections = await mongoose.connection.db
-      .listCollections()
-      .toArray();
-    res.json({
-      connectedTo: mongoose.connection.name,
-      collections: collections.map((c) => c.name)
-    });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
-
 //Aktuell nicht in Verwendung
+
 // export const getDressById = async (req, res) => {
 //   const { id } = req.params;
 
