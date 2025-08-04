@@ -9,6 +9,12 @@ const app = express();
 // Sicherheits-Header global aktivieren
 app.use(helmet());
 
+// app.use((req, res, next) => {
+//   res.setHeader("X-Content-Type-Options", "nosniff");
+//   console.log("Header gesetzt");
+//   next();
+// });
+
 // Cache-Control Header für alle Routen in diesem Router
 app.use((req, res, next) => {
   res.setHeader("Cache-Control", "public, max-age=3600"); // 1 Stunde Cache

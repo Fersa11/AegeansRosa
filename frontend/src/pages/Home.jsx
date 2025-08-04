@@ -17,7 +17,7 @@ function Home() {
   return (
     <div className="productpage">
       <Helmet>
-        <title>Aegean's Rosa. Stilvolle Damenmode online kaufen</title>
+        <title>Aegean's Rosa. Stilvolle Kleidungen entdecken</title>
         <meta
           name="description"
           content="Entdecke hochwertige Damenmode für jeden Anlass. Kleider, Jacken, Accessoires und mehr. Bei Aegean's Rosa."
