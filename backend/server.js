@@ -1,10 +1,19 @@
 import express from "express";
 import connectDB from "./config/db.js";
 import cors from "cors";
-// import dress from "./models/dress.model.js";
+import helmet from "helmet";
 import dressRoutes from "./routes/dress.route.js";
 
 const app = express();
+
+// Sicherheits-Header global aktivieren
+app.use(helmet());
+
+// Cache-Control Header für alle Routen in diesem Router
+app.use((req, res, next) => {
+  res.setHeader("Cache-Control", "public, max-age=3600"); // 1 Stunde Cache
+  next();
+});
 
 // Middleware
 app.use(
