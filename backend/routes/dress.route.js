@@ -1,4 +1,5 @@
 import express from "express";
+import helmet from "helmet";
 
 import {
   // createDress,
@@ -7,6 +8,9 @@ import {
   // updateDress
 } from "../controllers/dress.controller.js";
 const router = express.Router();
+
+// Sicherheitsmiddleware
+router.use(helmet());
 
 // Cache-Control Header für alle Routen in diesem Router
 router.use((req, res, next) => {
