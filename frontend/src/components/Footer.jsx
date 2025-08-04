@@ -121,7 +121,7 @@ const Footer = () => {
                 aria-label="Instagram"
                 size="small"
                 component="a"
-                href="https://www.instagram.com/yourprofile"
+                href="https://www.instagram.com/aegeansrosa/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

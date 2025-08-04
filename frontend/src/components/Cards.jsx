@@ -109,6 +109,7 @@ function Cards({
       <CardActions disableSpacing>
         <IconButton aria-label="insta">
           <InstagramIcon
+            href={`https://www.instagram.com/aegeansrosa/`}
             sx={{
               color: "grey",
               "&:hover": {
