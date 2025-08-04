@@ -1,7 +1,7 @@
 import Cards from "../components/Cards";
 import { Box } from "@mui/material";
 import Sidebar from "../components/Sidebar";
-
+import { Helmet } from "react-helmet-async";
 // import dresses from "../assets/DressesDB";
 import { useEffect } from "react";
 import { useDressStore } from "../store/dresses";
@@ -16,6 +16,14 @@ function Home() {
 
   return (
     <div className="productpage">
+      <Helmet>
+        <title>Aegean's Rosa. Stilvolle Damenmode online kaufen</title>
+        <meta
+          name="description"
+          content="Entdecke hochwertige Damenmode für jeden Anlass. Kleider, Jacken, Accessoires und mehr. Bei Aegean's Rosa."
+        />
+      </Helmet>
+
       <Sidebar />
       <Box
         display="flex"

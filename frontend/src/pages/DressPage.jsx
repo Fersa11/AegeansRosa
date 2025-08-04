@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useCategoryStore } from "../store/catagory";
 // ...other imports...
 import Cards from "../components/Cards";
-import Footer from "../components/Footer";
+import { Helmet } from "react-helmet-async";
 import { Box } from "@mui/material";
 import { useMemo } from "react";
 import Sidebar from "../components/Sidebar";
@@ -31,6 +31,14 @@ function DressPage() {
 
   return (
     <div className="productpage">
+      <Helmet>
+        <title>Elegante Kleider für Damen | Aegean's Rosa</title>
+        <meta
+          name="description"
+          content="Finde dein perfektes Teil für Alltag und besondere Anlässe bei Aegean's Rosa."
+        />
+      </Helmet>
+
       <Sidebar />
       <Box
         display="flex"
