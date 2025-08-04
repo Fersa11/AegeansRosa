@@ -38,3 +38,7 @@ logs/
 *.orig
 
 # Docs
+*.csv
+*.tsv
+*.log
+*.docx

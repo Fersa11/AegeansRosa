@@ -25,3 +25,7 @@ dist-ssr
 
 # Docs
 Docs/
+*.docx
+*.pdf
+*.csv       
+*.tsv
